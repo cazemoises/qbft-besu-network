@@ -1,0 +1,5 @@
+FROM hyperledger/besu:24.7.1
+
+COPY ./config/ /config/
+
+RUN besu operator generate-blockchain-config --config-file=./config/qbftConfigFile.json --to=./config/network-files --private-key-file-name=key

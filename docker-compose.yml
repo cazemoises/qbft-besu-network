@@ -1,0 +1,68 @@
+version: '3'
+services:
+  config-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile-config
+    volumes:
+      - ./config:/config
+
+  node1:
+    build:
+      context: ./besu-nodes/node-1
+      dockerfile: Dockerfile
+    depends_on:
+      - config-generator
+    ports:
+      - "8545:8545"  # JSON-RPC
+      - "30303:30303"  # P2P network
+    volumes:
+      - ./besu-nodes/node-1/data:/data
+    networks:
+      - besu-network
+
+  node2:
+    build:
+      context: ./besu-nodes/node-2
+      dockerfile: Dockerfile
+    depends_on:
+      - config-generator
+    ports:
+      - "8546:8545"  # JSON-RPC
+      - "30304:30303"  # P2P network
+    volumes:
+      - ./besu-nodes/node-2/data:/data
+    networks:
+      - besu-network
+
+  node3:
+    build:
+      context: ./besu-nodes/node-3
+      dockerfile: Dockerfile
+    depends_on:
+      - config-generator
+    ports:
+      - "8547:8545"  # JSON-RPC
+      - "30305:30303"  # P2P network
+    volumes:
+      - ./besu-nodes/node-3/data:/data
+    networks:
+      - besu-network
+
+  node4:
+    build:
+      context: ./besu-nodes/node-4
+      dockerfile: Dockerfile
+    depends_on:
+      - config-generator
+    ports:
+      - "8548:8545"  # JSON-RPC
+      - "30306:30303"  # P2P network
+    volumes:
+      - ./besu-nodes/node-4/data:/data
+    networks:
+      - besu-network
+      
+networks:
+  besu-network:
+    driver: bridge

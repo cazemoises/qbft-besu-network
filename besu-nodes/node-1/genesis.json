@@ -1,0 +1,18 @@
+{
+  "config" : {
+    "chainId" : 1337,
+    "berlinBlock" : 0,
+    "qbft" : {
+      "blockperiodseconds" : 2,
+      "epochlength" : 30000,
+      "requesttimeoutseconds" : 4
+    }
+  },
+  "nonce" : "0x0",
+  "timestamp" : "0x58ee40ba",
+  "gasLimit" : "0x47b760",
+  "difficulty" : "0x1",
+  "mixHash" : "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "coinbase" : "0x0000000000000000000000000000000000000000",
+  "extraData" : "0xf87aa00000000000000000000000000000000000000000000000000000000000000000f8549424ffaa4af85f563a8091b37135626b946e583ad1948ee053364cc0a60697a07ce8fc1a46c0d5005d9394f29e98d6fd70b6cda2d460460c9f1c1c2442d39c940195486c77e2c5a4629e4cd5428ea702e3bf3a95c080c0"
+}
